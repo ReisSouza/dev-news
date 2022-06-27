@@ -1,0 +1,32 @@
+.Root {
+  @apply
+  w-full
+  max-h-20
+
+  border-b-2
+  border-b-shaper-main  ;
+}
+.Toolbar {
+  @apply
+  w-full
+  max-w-[69.25rem]
+
+  mx-auto
+  py-4
+
+  flex
+  justify-between
+  items-center
+}
+
+.WrappedNavigation{
+  @apply
+  flex
+  items-center
+}
+
+.Navigation {
+  @apply
+  flex
+  ml-8
+}

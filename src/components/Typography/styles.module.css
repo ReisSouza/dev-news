@@ -1,0 +1,49 @@
+.root{
+  @apply transition-all duration-150 ;
+}
+.TypographyPrimary{
+  @apply text-primary-main
+}
+.TypographySecondary{
+  @apply text-secondary-main
+}
+.TypographyWhite{
+  @apply text-white
+}
+.TypographyAlignCenter{
+  @apply text-center
+}
+.TypographyAlignLeft{
+  @apply text-left
+}
+.TypographyAlignRight{
+  @apply text-right
+}
+.TypographySizeHeading1{
+@apply text-[32px] tablet:text-[40px] leading-[120%]
+}
+.TypographySizeHeading2{
+
+}
+.TypographySizeHeading3{
+
+}
+.TypographySizeParagraph1{
+
+}
+.TypographySizeParagraph2{
+
+}
+.TypographySizeParagraph3{
+
+}
+
+.TypographyBorderColorPrimary{
+  @apply border-primary-main
+}
+.TypographyBorderColorSecondary{
+  @apply border-secondary-main
+}
+.TypographyBorderActive{
+  @apply border-b-4 w-fit
+}
