@@ -1,12 +1,14 @@
 .Root {
  @apply
- block
+ flex
+ justify-center
  relative
 
  h-fit
 
  text-white
  mr-4
+ px-3
  last:ml-0
 }
 .Root::before {

@@ -20,22 +20,22 @@
   @apply text-right
 }
 .TypographySizeHeading1{
-@apply text-[32px] tablet:text-[40px] leading-[120%]
+@apply text-[48px] tablet:text-[72px] leading-[72px] font-bold
 }
 .TypographySizeHeading2{
-
+@apply text-[38px] tablet:text-[54px] leading-[60px] font-bold
 }
 .TypographySizeHeading3{
-
+@apply  text-[20px] tablet:text-[24px] leading-[34px] font-bold
 }
 .TypographySizeParagraph1{
-
+  @apply  text-[20px] tablet:text-[24px] leading-[36px]
 }
 .TypographySizeParagraph2{
-
+  @apply  text-[16px] tablet:text-[18px] leading-[100%]
 }
 .TypographySizeParagraph3{
-
+  @apply  text-[14px] tablet:text-[16px] leading-[100%]
 }
 
 .TypographyBorderColorPrimary{

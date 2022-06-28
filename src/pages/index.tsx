@@ -1,33 +1,19 @@
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 
 import { Home } from '@/screen';
-import { PostType } from '@/types';
-import getPosts from '@/api/Post/getPost';
-import useRequest from '@/hook/useRequest';
 
-type HomeProps = {
-  fallbackData: PostType[];
-};
-
-const HomePage = ({ fallbackData }: HomeProps) => {
-  const { data } = useRequest(
-    {
-      url: '/posts',
-    },
-    { fallbackData },
-  );
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Fill Boilerplate</title>
+        <title>Dev News</title>
       </Head>
-      <Home data={data} />
+      <Home />
     </>
   );
 };
 export default HomePage;
-export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const Posts = await getPosts();
-  return { props: { fallbackData: Posts } };
+export const getServerSideProps: GetServerSideProps = async () => {
+  return { props: {} };
 };

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { FaGithub } from 'react-icons/fa';
 import { RiCloseFill } from 'react-icons/ri';
 
-import Button from '@/components/ButtonBase/Button';
+import Button from '@/components/ButtonBase/ButtonBase';
 import S from './styles.module.css';
 
 type ButtonAuthProps = {

@@ -1,0 +1,39 @@
+.Root {}
+.Title {
+  @apply
+  max-w-[538px]
+  mt-[40px]
+  mb-[24px]
+
+}
+.Title span{
+  @apply text-primary-main
+}
+
+.Paragraph {
+  @apply
+  max-w-[368px]
+}
+.Paragraph span {
+  @apply text-primary-main
+}
+
+.BtnSubscribe{
+  @apply
+  bg-secondary-main
+
+  text-xl
+  text-white
+  font-bold
+
+  py-5
+  px-16
+  mt-[40px]
+
+  rounded-full
+
+  hover:brightness-95
+  transition-all
+  duration-150
+  ease-in-out
+}

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-import { Button } from '..';
-import { ButtonProps } from '../ButtonBase/Button';
+import ButtonBase, { ButtonProps } from '../ButtonBase/ButtonBase';
 
 type LinkNavigationProps = {
   href: string;
@@ -20,9 +19,15 @@ const LinkNavigation: React.FC<LinkNavigationProps> = ({
 }: LinkNavigationProps) => {
   return (
     <Link href={href} passHref>
-      <Button as="a" target={targetBlank ? '_blank' : '_self'} rel="noreferrer noopener" aria-label={arial} {...other}>
+      <ButtonBase
+        as="a"
+        target={targetBlank ? '_blank' : '_self'}
+        rel="noreferrer noopener"
+        aria-label={arial}
+        {...other}
+      >
         {children}
-      </Button>
+      </ButtonBase>
     </Link>
   );
 };
