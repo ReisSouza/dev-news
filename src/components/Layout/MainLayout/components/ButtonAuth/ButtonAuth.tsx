@@ -7,8 +7,8 @@ import Button from '@/components/ButtonBase/ButtonBase';
 import S from './styles.module.css';
 
 type ButtonAuthProps = {
-  isAuthenticated: boolean;
   name: string;
+  isAuthenticated: boolean;
   onPress: () => void;
 };
 const ButtonAuth: React.FC<ButtonAuthProps> = ({ name, onPress, isAuthenticated = true }: ButtonAuthProps) => {
