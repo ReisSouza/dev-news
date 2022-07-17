@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
-import { fauna } from '@/services/fauna';
+import { fauna } from '@/services';
 
 export default NextAuth({
   providers: [
@@ -19,7 +19,6 @@ export default NextAuth({
   callbacks: {
     async signIn({ user }) {
       const { email } = user;
-
       try {
         await fauna.query(
           q.If(
