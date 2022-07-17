@@ -18,22 +18,4 @@
   @apply text-primary-main
 }
 
-.BtnSubscribe{
-  @apply
-  bg-secondary-main
 
-  text-xl
-  text-white
-  font-bold
-
-  py-5
-  px-16
-  mt-[40px]
-
-  rounded-full
-
-  hover:brightness-95
-  transition-all
-  duration-150
-  ease-in-out
-}
