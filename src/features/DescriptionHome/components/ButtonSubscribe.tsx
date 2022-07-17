@@ -12,6 +12,7 @@ type ButtonSubscribeProps = {
 };
 const ButtonSubscribe: React.FC<ButtonSubscribeProps> = ({ priceId }: ButtonSubscribeProps) => {
   const { data: session } = useSession();
+  console.log(priceId);
   const handleSubscribe = async () => {
     if (!session) {
       signIn('github');
