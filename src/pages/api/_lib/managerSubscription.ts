@@ -1,7 +1,7 @@
 import { query as q } from 'faunadb';
 import { fauna, stripe } from '@/services';
 
-const saveSubscription = async (subscriptionId: string, customerId: string) => {
+const saveSubscription = async (subscriptionId: string, customerId: string, createAction = false) => {
   const userRef = await fauna.query(q.Select('ref', q.Get(q.Match(q.Index('user_by_stripe_customer_id'), customerId))));
   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
   const subscriptionData = {
@@ -10,6 +10,14 @@ const saveSubscription = async (subscriptionId: string, customerId: string) => {
     status: subscription.status,
     priceId: subscription.items.data[0].price.id,
   };
-  await fauna.query(q.Create(q.Collection('subscriptions'), { data: subscriptionData }));
+  if (createAction) {
+    await fauna.query(q.Create(q.Collection('subscriptions'), { data: subscriptionData }));
+  } else {
+    await fauna.query(
+      q.Replace(q.Select('ref', q.Get(q.Match(q.Index('subscription_by_id'), subscription.id))), {
+        data: subscriptionData,
+      }),
+    );
+  }
 };
 export default saveSubscription;
