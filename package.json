@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --cache"
+    "lint": "eslint --cache",
+    "stripe": "stripe-cli/stripe listen  --forward-to localhost:3000/api/webhooks"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.32.0",
     "@hookform/devtools": "^4.2.2",
     "@hookform/resolvers": "^2.9.6",
     "@tailwindcss/aspect-ratio": "^0.4.0",
