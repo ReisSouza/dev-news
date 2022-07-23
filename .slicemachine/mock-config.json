@@ -1,5 +1,27 @@
 {
   "_cts": {
-    "publication": {}
+    "publication": {
+      "body": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "category": {}
+  },
+  "slices": {
+    "Publication": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   }
 }

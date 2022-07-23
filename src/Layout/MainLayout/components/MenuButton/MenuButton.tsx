@@ -11,7 +11,7 @@ type MenuButtonProps = {
 };
 const MenuButton: React.FC<MenuButtonProps> = ({ to, label, isActive = false }: MenuButtonProps) => {
   return (
-    <Link passHref href={to}>
+    <Link passHref href={to} prefetch>
       <a className={clsx(S.Root, isActive ? S.Active : '')}>{label}</a>
     </Link>
   );
