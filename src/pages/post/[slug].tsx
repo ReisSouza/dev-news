@@ -1,17 +1,17 @@
-import { createClient } from '@/services';
-import { PostType } from '@/types';
-import { GetServerSideProps, NextPage } from 'next';
-import { getSession } from 'next-auth/react';
-import { RichText } from 'prismic-dom';
 import React from 'react';
+import { RichText } from 'prismic-dom';
+import { getSession } from 'next-auth/react';
+import { GetServerSideProps, NextPage } from 'next';
 
-// import { Container } from './styles';
+import { Post } from '@/screen';
+import { PostType } from '@/types';
+import { createClient } from '@/services';
+
 type PostPagesProps = {
   post: PostType;
 };
 const PostsPages: NextPage<PostPagesProps> = ({ post }: PostPagesProps) => {
-  console.log(post);
-  return <div />;
+  return <Post post={post} />;
 };
 
 export default PostsPages;
