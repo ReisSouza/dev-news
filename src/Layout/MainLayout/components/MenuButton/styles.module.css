@@ -1,0 +1,38 @@
+.Root {
+ @apply
+ flex
+ justify-center
+ relative
+
+ h-fit
+
+ text-white
+ mr-4
+ px-3
+ last:ml-0
+}
+.Root::before {
+  @apply
+  h-1
+  w-full
+  bottom-[-26px]
+  absolute
+
+  scale-x-0
+  origin-left
+  transform-gpu
+  transition-transform
+
+  bg-primary-main;
+
+  content: '';
+}
+.Root:hover::before{
+  @apply  scale-x-100
+}
+.Active {
+  @apply font-bold
+}
+.Active::before {
+  @apply scale-x-100
+}
