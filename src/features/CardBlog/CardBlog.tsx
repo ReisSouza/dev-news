@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 // import { Container } from './styles';
-import { PostType } from '@/types/post';
 import { Typography } from '@/components';
+import { BlogType } from '@/types';
 
 type CardBlogProps = {
-  post: PostType;
+  post: BlogType;
 };
 const CardBlog: React.FC<CardBlogProps> = ({ post }: CardBlogProps) => {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   return (
-    <Link passHref href={`post/${post.slug}`} prefetch>
+    <Link passHref href={`post/${post.slug}`}>
       <a>
         <div
           className="pb-8 border-b-2 border-[#323238] max-w-[728px] mx-auto font-light"
