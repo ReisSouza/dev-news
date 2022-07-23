@@ -1,12 +1,13 @@
 import { Blog } from '@/screen';
 import { createClient } from '@/services';
-import { PostType } from '@/types/post';
+import { BlogType } from '@/types';
+import { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 type BlogPagesProps = {
-  posts: PostType[];
+  posts: BlogType[];
 };
-const BlogPage: React.FC<BlogPagesProps> = ({ posts }: BlogPagesProps) => {
+const BlogPage: NextPage<BlogPagesProps> = ({ posts }: BlogPagesProps) => {
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ export async function getStaticProps({ previewData }) {
   const data = await client.getAllByType('publication', {
     fetch: ['publication.title', 'publication.body'],
   });
-  const posts = data.map((post) => {
+  const posts: BlogType[] = data.map((post) => {
     return {
       slug: post.uid,
       title: post.data.title,
