@@ -1,0 +1,32 @@
+.Root {
+  @apply
+  py-3
+  px-4
+
+  rounded-full
+
+  bg-shaper-main
+  text-white
+
+  flex
+  items-center
+
+  font-bold
+
+  hover:brightness-95
+  hover:ease-out duration-200
+  hover:shadow-lg
+}
+
+.Root svg {
+  @apply
+  first:text-primary-main
+   first:mr-4 ml-0
+}
+
+.Authenticated svg {
+  @apply
+  first:text-secondary-main
+  last:text-shaper-light
+  last:ml-4
+}
