@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
 import { AppProvider } from '@/context';
-import Analytics from '@/lib/Analytics';
 import MainLayout from '@/Layout/MainLayout';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
@@ -20,7 +19,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       <PrismicPreview repositoryName={repositoryName}>
         <AppProvider>
           <SessionProvider session={session}>
-            <Analytics />
             <MainLayout>
               <Component {...pageProps} />
             </MainLayout>

@@ -19,7 +19,7 @@ const HomePage: NextPage<HomePageProps> = ({ product }: HomePageProps) => {
   );
 };
 export default HomePage;
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
   const price = await stripe.prices.retrieve('price_1LFkutFRPzFhMiW5dU2u6fD2', {
     expand: ['product'],
