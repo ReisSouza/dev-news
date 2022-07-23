@@ -1,4 +1,4 @@
-This is a TypeScript [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) using the default project configuration defined by [Fill Studio](https://github.com/fill-studio).
+This is a TypeScript [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) using the default project configuration defined by [Reis Souza](https://github.com/ReisSouza).
 
 ## Getting Started
 
@@ -16,8 +16,25 @@ npm run dev
 # or
 yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+run the development prismic:
+
+```bash
+npm run slicemachine
+# or
+yarn slicemachine
+```
+Open [http://localhost:9999](http://localhost:9999) with your browser to see the result.
+
+run the development Webevents Stripe
+
+yarn stripe
+
+Press Enter to open the browser or visit https://dashboard.stripe.com/stripecli/confirm_auth?t=idproject
+
+
+
 
 You can start editing the page by modifying `src/pages/index.js`. The page auto-updates as you edit the file.
 
