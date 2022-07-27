@@ -2,10 +2,10 @@ import React from 'react';
 
 import S from './styles.module.css';
 import { CardBlog } from '@/features';
-import { PostType } from '@/types/post';
+import { BlogType } from '@/types';
 
 type BlogProps = {
-  posts: PostType[];
+  posts: BlogType[];
 };
 const Blog: React.FC<BlogProps> = ({ posts }: BlogProps) => {
   return (

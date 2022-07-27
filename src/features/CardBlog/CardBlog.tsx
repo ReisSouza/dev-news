@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 // import { Container } from './styles';
 import { Typography } from '@/components';
@@ -10,8 +11,9 @@ type CardBlogProps = {
 };
 const CardBlog: React.FC<CardBlogProps> = ({ post }: CardBlogProps) => {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
+  const { data: session } = useSession();
   return (
-    <Link passHref href={`post/${post.slug}`}>
+    <Link passHref href={session?.activeSubscription ? `post/preview/${post.slug}` : `post/${post.slug}`}>
       <a>
         <div
           className="pb-8 border-b-2 border-[#323238] max-w-[728px] mx-auto font-light"

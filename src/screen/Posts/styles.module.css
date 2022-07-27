@@ -11,22 +11,46 @@
 }
 .Time{
     @apply
- 
+
     font-bold
     mb-5
     block
 }
 .Body {
     @apply prose-h1:text-[24px]
-    laptop:prose-h1:text-[32px] 
+    laptop:prose-h1:text-[32px]
     prose-h2:text-[20px]
-    laptop:prose-h2:text-[24px] 
+    laptop:prose-h2:text-[24px]
     prose-h3:text-[18px]
-    laptop:prose-h3:text-[20px] 
+    laptop:prose-h3:text-[20px]
     prose
     prose-headings:text-primary-main
     w-full
     max-w-[1190px]
     text-white
     ;
+}
+.Preview {
+ background: linear-gradient(180deg, #E1E1E6 54.37%, rgba(225, 225, 230, 0) 123.54%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-Fill-color: transparent;
+}
+
+.ButtonSubscribre{
+  @apply
+  bg-primary-main
+  py-6
+  px-16
+  rounded-full
+  shadow-2xl
+  drop-shadow-lg
+  text-[22px]
+  text-shaper-main
+  font-bold
+  mt-16
+  block
+  w-fit
+  mx-auto
 }

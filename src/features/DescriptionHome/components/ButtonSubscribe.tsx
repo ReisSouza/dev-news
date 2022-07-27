@@ -6,16 +6,22 @@ import { getStripeJs } from '@/services';
 
 import S from './styles.module.css';
 import { ButtonBase } from '@/components';
+import { useRouter } from 'next/router';
 
 type ButtonSubscribeProps = {
   priceId: string;
 };
 const ButtonSubscribe: React.FC<ButtonSubscribeProps> = ({ priceId }: ButtonSubscribeProps) => {
   const { data: session } = useSession();
+  const router = useRouter();
   console.log(priceId);
   const handleSubscribe = async () => {
     if (!session) {
       signIn('github');
+    }
+    if (session && session?.activeSubscription) {
+      router.push('/blog');
+      return;
     }
     try {
       const response = await api.post('/subscribe');
@@ -31,7 +37,7 @@ const ButtonSubscribe: React.FC<ButtonSubscribeProps> = ({ priceId }: ButtonSubs
   };
   return (
     <ButtonBase className={S.BtnSubscribe} onClick={() => handleSubscribe()}>
-      Subscribe now
+      {session?.activeSubscription ? 'go to blog' : !session ? 'sign in github' : 'Subscribe now'}
     </ButtonBase>
   );
 };

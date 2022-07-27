@@ -5,7 +5,7 @@ import S from './styles.module.css';
 
 type Props = {
   children: ReactNode;
-  className: string;
+  className?: string;
 };
 
 export type ButtonProps<T extends ElementType> = PolymorphicComponentPropsWithRef<T, Props>;
