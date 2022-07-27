@@ -18,7 +18,14 @@ export default PostsPages;
 
 export const getServerSideProps: GetServerSideProps = async ({ previewData, params, req }) => {
   const session = await getSession({ req });
-  if (!session) {
+  console.log(session);
+  if (!session?.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
   }
   const client = createClient({ previewData });
   const response = await client.getByUID('publication', params.slug as string, {});
